@@ -9,11 +9,23 @@ namespace Task_3
     
     internal class order
     {
-        int id {  get; set; }
-        string customer_name { get; set; }
-        float amount { get; set; }
-        bool statues { get; set; }
-        DateTime created_Date { get; set; }
+        public int id { get; set; }
+        public string customer_name { get; set; }
+        public float amount { get; set; }
+        public bool statues { get; set; }
+        public DateTime created_Date { get; set; }
+
+        public order(int id, string customer_name, float amount, bool statues, DateTime created_Date)
+        {
+            this.id = id;
+            this.customer_name = customer_name;
+            this.amount = amount;
+            this.statues = statues;
+            this.created_Date = created_Date;
+
+
+        
+        }
 
     }
 }

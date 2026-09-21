@@ -12,14 +12,14 @@ namespace Task_3
 
     internal class Program
     {
-        bool ok = true;
-        int c;
+        
         List<order>orders=new List<order>();
 
         static void Main(string[] args)
 
         {
-
+            bool ok = true;
+            int c;
             while (ok)
             {
                 Console.WriteLine("************************");
