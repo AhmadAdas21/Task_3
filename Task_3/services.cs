@@ -97,8 +97,15 @@ namespace Task_3
                 }
             }
             var ord = orders.FirstOrDefault(x => x.id == iddd);
-            Console.WriteLine(ord);
-            
+            if (ord != null)
+            {
+                Console.WriteLine( ord.id + " " + ord.customer_name + " " +ord.amount + " " + ord.statues + " " + ord.created_Date );
+            }
+            else
+            {
+                Console.WriteLine("Order not found");
+            }
+
         }
         public void show_order()
         {
@@ -149,14 +156,12 @@ namespace Task_3
         }
         public void sort_order_by_date()
         {
-            var da=orders.GroupBy(x=>x.created_Date).ToList();
+            var da = orders.OrderByDescending(x => x.created_Date).ToList();
             foreach (var group in da)
             {
-                Console.WriteLine($"Orders for Date: {group.Key}");
-                foreach (var order in group)
-                {
-                    Console.WriteLine(order.id + " " + order.customer_name + " " + order.amount);
-                }
+               
+                 Console.WriteLine(group.id + " " + group.customer_name + " " + group.amount);
+                
             }
         }
         public void total_amount()
@@ -175,10 +180,7 @@ namespace Task_3
 
                 foreach (var order in group)
                 {
-                    Console.WriteLine(
-                        order.id + " " +
-                        order.amount
-                    );
+                    Console.WriteLine(order.id + " " + order.amount );
                 }
             }
         }
